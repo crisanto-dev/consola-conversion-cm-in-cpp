@@ -48,5 +48,7 @@ int main()
 
 	cout << "Fin del programa!";
 
+	system("PAUSE");
+
 	return 0;
 }
