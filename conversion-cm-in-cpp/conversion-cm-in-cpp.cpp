@@ -1,20 +1,52 @@
 // conversion-cm-in-cpp.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
+// Autor: Cristian Antonio Escalante Hernandez
+// Github: crisanto-dev
+// Fecha: 11/10/2020
+// Problema
+/* Escriba un programa que convierta de centímetros a pulgadas. 
+Una pulgada es igual a 2.54 centímetros. */
 
 #include <iostream>
 
+using namespace std;
+
+#define PULGADA 2.54;
+
 int main()
 {
-    std::cout << "Hello World!\n";
+	cout << "Autor: Cristian Antonio Escalante Hernandez\n";
+	cout << "Github: crisanto-dev\n";
+	cout << "Problema: Escriba un programa que convierta de centímetros a pulgadas. Una pulgada es igual a 2.54 centímetros.\n";
+	cout << "\n";
+
+	cout << "Convertir: ";
+
+	// Declaracion de variables
+	bool bandera = true;
+	float entrada, resultado;
+
+	do
+	{
+		cin >> entrada;
+		if (entrada > 0)
+		{
+			bandera = false;
+			cout << "Estamos procesando\n";
+			system("PAUSE");
+		}
+		else
+		{
+			cout << "Por favor ingrese los centimetros que desea convertir a pulgadas: ";
+			cin.clear();
+			cin.ignore(numeric_limits<streamsize>::max(), '\n');
+		}
+	} while (bandera);
+
+	resultado = entrada / PULGADA; // Por equivalencias 1 pulgada = 2.54 centimetros -> 1 cm * (1 pulg / 2.54 cm)
+
+	cout << entrada << " cm es igual a " << resultado << " pulg \n";
+
+	cout << "Fin del programa!";
+
+	return 0;
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
